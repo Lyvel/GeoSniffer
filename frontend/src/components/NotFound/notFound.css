@@ -1,0 +1,12 @@
+.notfound {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  padding: 5rem 0;
+}
+
+.notfound p {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 12px;
+}

@@ -1,0 +1,31 @@
+.countryView {
+  position: relative;
+  width: 400px;
+  background: #fff;
+  padding: 20px 32px;
+  border-radius: 18px;
+  transition: 0.6s ease-out;
+  margin: auto;
+  height: min-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  scale: 0;
+  opacity: 0;
+  max-width: 1200px;
+}
+
+.countryView__full {
+  width: 90vw;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 1000px) {
+  .countryView__full {
+    justify-content: center;
+    flex-direction: column-reverse;
+    width: 400px;
+  }
+}

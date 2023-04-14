@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap");
+:root {
+  --font-family: "Rubik", serif;
+  --h1-font-size: 54px;
+  --h1-font-size-small: 28px;
+  --p-font-size: 26px;
+
+  --color-bg: #f9f9f9;
+  --color-bg2: white;
+  --color-footer: #031b34;
+  --color-blog: #042c54;
+  --color-text: #06283d;
+  --color-subtext: #ff8a71;
+  --color-button: #fc9403;
+
+  color: var(--color-text);
+  font-family: var(--font-family);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #06283d;
+}
+
+.fadeIn {
+  animation: 0.5s fadeIn forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.fadeOut {
+  opacity: 1;
+  scale: 1;
+  animation: 0.5s fadeOut forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    scale: 0;
+    opacity: 0;
+  }
+}

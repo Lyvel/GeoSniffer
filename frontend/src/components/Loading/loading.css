@@ -1,0 +1,12 @@
+.loading {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  display: none;
+}
+
+.loading p {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 12px;
+}
