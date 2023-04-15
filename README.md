@@ -2,6 +2,10 @@
 
 GeoSniffer is a web app that provides basic information about countries, such as language, capital, population, and more. This repository contains both the frontend and backend code for the app.
 
+## Live Demo
+
+There is a live demo at the following url: `https://geosniffer.netlify.app/`
+
 ## Prerequisites
 
 Before you begin, make sure you have the following installed on your system:
