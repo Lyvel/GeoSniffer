@@ -11,16 +11,19 @@ app.use(
 );
 
 app.get("/api/:id", (req, res) => {
+  _id = req.params.id;
   fetchCountryData(req.params.id).then((data) => {
     res.send(data);
   });
 });
 
+var _id = "";
+
 const errorMessages = { status: 404, message: "Country not found" };
 
 const fetchCountryData = async (country) => {
   const countryData = await axios
-    .get(`https://restcountries.com/v3.1/name/${country}/?fullText=true`)
+    .get(`https://restcountries.com/v3.1/name/${country}`)
     .catch((error) => {
       return JSON.stringify(errorMessages);
     });
@@ -33,45 +36,57 @@ const stripCountryData = async (country) => {
     return JSON.stringify(errorMessages);
   }
 
+  var index = 0;
+
+  for (var i = 0; i < country.length; i++) {
+    if (country[i].cca2.toLowerCase() === _id.toLowerCase()) {
+      index = i;
+      break;
+    }
+  }
+
   var currencies = [];
-  Object.keys(country[0].currencies).forEach((key) =>
+  Object.keys(country[index].currencies).forEach((key) =>
     currencies.push(
       "(" +
-        country[0].currencies[key].symbol +
+        country[index].currencies[key].symbol +
         ") " +
-        country[0].currencies[key].name
+        country[index].currencies[key].name
     )
   );
 
   var nativeNames = [];
-  Object.keys(country[0].name.nativeName).forEach((key) => {
-    if (country[0].name.nativeName[key].official === country[0].name.official) {
+  Object.keys(country[index].name.nativeName).forEach((key) => {
+    if (
+      country[index].name.nativeName[key].official ===
+      country[index].name.official
+    ) {
     } else {
-      nativeNames.push(country[0].name.nativeName[key].official);
+      nativeNames.push(country[index].name.nativeName[key].official);
     }
   });
 
   var languages = [];
-  Object.keys(country[0].languages).forEach((key) =>
-    languages.push(country[0].languages[key])
+  Object.keys(country[index].languages).forEach((key) =>
+    languages.push(country[index].languages[key])
   );
 
   var timezones = [];
-  Object.keys(country[0].timezones).forEach((key) =>
-    timezones.push(country[0].timezones[key])
+  Object.keys(country[index].timezones).forEach((key) =>
+    timezones.push(country[index].timezones[key])
   );
 
   const newCountryData = {
-    name: country[0].name.official,
+    name: country[index].name.official,
     currencies: currencies.join("\n"),
     languages: languages.join("\n"),
-    capital: country[0].capital[0],
-    flagpng: country[0].flags.png,
-    area: country[0].area.toLocaleString(),
-    googlemaps: country[0].maps.googleMaps,
-    population: country[0].population.toLocaleString(),
+    capital: country[index].capital[0],
+    flagpng: country[index].flags.png,
+    area: country[index].area.toLocaleString(),
+    googlemaps: country[index].maps.googleMaps,
+    population: country[index].population.toLocaleString(),
     timezone: timezones.join("\n"),
-    continent: country[0].continents[0],
+    continent: country[index].continents[0],
     nativeNames: nativeNames.join("\n"),
   };
 
