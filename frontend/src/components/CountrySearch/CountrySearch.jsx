@@ -62,6 +62,7 @@ const CountrySearch = () => {
         <input
           type="text"
           placeholder="Enter country name"
+          value={country}
           onChange={(e) => {
             setCountry(e.target.value);
           }}
