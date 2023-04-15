@@ -20,7 +20,7 @@ const errorMessages = { status: 404, message: "Country not found" };
 
 const fetchCountryData = async (country) => {
   const countryData = await axios
-    .get(`https://restcountries.com/v3.1/name/${country}`)
+    .get(`https://restcountries.com/v3.1/name/${country}/?fullText=true`)
     .catch((error) => {
       return JSON.stringify(errorMessages);
     });
