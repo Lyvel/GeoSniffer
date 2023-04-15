@@ -10,9 +10,7 @@ const CountryView = () => {
     <div className="countryView fadeIn" id="countryView">
       {showFullInfo === true && (
         <>
-          {setTimeout(() => {
-            <FullCountryInfo />;
-          }, 500)}
+          <FullCountryInfo />
         </>
       )}
       <CountryInfo />

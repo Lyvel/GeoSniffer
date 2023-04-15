@@ -12,7 +12,7 @@ const FullCountryInfo = () => {
   updateView();
 
   return (
-    <div className="fullcountryinfo">
+    <div className="fullcountryinfo fadeIn">
       <h1>Full country info</h1>
     </div>
   );
