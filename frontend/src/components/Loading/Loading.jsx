@@ -1,6 +1,8 @@
 import React from "react";
 import "./loading.css";
 
+/*Loading component */
+
 const Loading = () => {
   return (
     <div className="loading">

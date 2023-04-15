@@ -10,7 +10,10 @@ import "./countrySearch.css";
 
 import { useUpdateFullInfoData } from "../Context/FullInfoContext";
 
+/* Search bar component */
+
 const CountrySearch = () => {
+  /* Stores the current country string entered */
   const [country, setCountry] = useState("");
 
   const updateCountryData = useUpdateCountryData();
@@ -18,6 +21,7 @@ const CountrySearch = () => {
 
   const updateFullInfoData = useUpdateFullInfoData();
 
+  /* Fetches the JSON from my backend server and updates the CountryData context */
   const fetchCountryData = async () => {
     updateCountryData("");
     document.querySelector(".countrysearch").style.transform = "none";
@@ -47,10 +51,12 @@ const CountrySearch = () => {
       });
   };
 
+  /* Displays the loading component */
   const showLoading = () => {
     document.querySelector(".loading").style.display = "block";
   };
 
+  /* Hides the loading component */
   const hideLoading = () => {
     document.querySelector(".loading").style.display = "none";
   };

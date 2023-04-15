@@ -6,6 +6,8 @@ const UpdateFullInfoContext = React.createContext();
 export const useFullInfoData = () => useContext(FullInfoContext);
 export const useUpdateFullInfoData = () => useContext(UpdateFullInfoContext);
 
+/* Keeps track off whether the user has clicked to display more details */
+
 export const FullInfoProvider = ({ value, children }) => {
   const [fullInfoData, setfullInfo] = useState(value);
   return (

@@ -4,6 +4,8 @@ import "./countryView.css";
 
 import { useFullInfoData } from "../../components/Context/FullInfoContext";
 
+/* Container for showing country info once data has been received */
+
 const CountryView = () => {
   const showFullInfo = useFullInfoData();
   return (

@@ -1,6 +1,9 @@
 import React from "react";
 import "./fullCountryInfo.css";
 
+/* Full country info component
+    Not fully implemented, only a concept atm */
+
 const FullCountryInfo = () => {
   const updateView = () => {
     var view = document.getElementById("countryView");

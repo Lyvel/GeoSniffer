@@ -6,13 +6,13 @@ import { CountryView } from "../../containers";
 
 import { useCountryData } from "../../components/Context/CountryContext";
 
+/* Main container for the App. */
+
 const Main = () => {
   const countryData = useCountryData();
   return (
     <div>
       <CountrySearch />
-      {/*Checks wether there is any country data or if its not errored out.
-         If there is data and not an error, it will display the country view container*/}
       {countryData !== "" && countryData !== "404" && <CountryView />}
     </div>
   );

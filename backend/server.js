@@ -4,12 +4,14 @@ const app = express();
 
 const cors = require("cors");
 
+//Allows us to access the API from anywhere
 app.use(
   cors({
     origin: "*",
   })
 );
 
+//Gets the country data when the api is called with a country code / name
 app.get("/api/:id", (req, res) => {
   _id = req.params.id;
   fetchCountryData(req.params.id).then((data) => {
@@ -17,10 +19,12 @@ app.get("/api/:id", (req, res) => {
   });
 });
 
+//Stores the country code / name that was entered in the api
 var _id = "";
 
 const errorMessages = { status: 404, message: "Country not found" };
 
+//Fetches a json from restcountries.com using axios
 const fetchCountryData = async (country) => {
   const countryData = await axios
     .get(`https://restcountries.com/v3.1/name/${country}`)
@@ -31,6 +35,7 @@ const fetchCountryData = async (country) => {
   return stripCountryData(countryData.data);
 };
 
+//Removes unnecessary data from the json
 const stripCountryData = async (country) => {
   if (country === undefined) {
     return JSON.stringify(errorMessages);
@@ -38,6 +43,8 @@ const stripCountryData = async (country) => {
 
   var index = 0;
 
+  //Checks if the id received matches any country code in the json,
+  //if so returns that array, otherwise returns the first array in the json
   for (var i = 0; i < country.length; i++) {
     if (country[i].cca2.toLowerCase() === _id.toLowerCase()) {
       index = i;
@@ -93,6 +100,7 @@ const stripCountryData = async (country) => {
   return JSON.stringify(newCountryData, null, 2);
 };
 
+//Api listens on port 5000
 app.listen(5000, () => {
   console.log("Listening on port 5000");
 });

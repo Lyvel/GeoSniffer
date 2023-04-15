@@ -7,10 +7,14 @@ import {
   useUpdateFullInfoData,
 } from "../Context/FullInfoContext";
 
+/* Country info display component */
+
 const CountryInfo = () => {
   const countryData = useCountryData();
   const showFullInfo = useFullInfoData();
   const updateFullInfoData = useUpdateFullInfoData();
+
+  /* This removes the class from the countryView container to make it smaller again. */
 
   const hideFullView = () => {
     var view = document.getElementById("countryView");
