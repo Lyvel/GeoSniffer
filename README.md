@@ -13,11 +13,15 @@ Before you begin, make sure you have the following installed on your system:
 
 1. Clone this repository to your local machine:
 
-`git clone https://github.com/Lyvel/GeoSniffer.git`
+```
+git clone https://github.com/Lyvel/GeoSniffer.git
+```
 
 2. Navigate to the project directory:
 
-`cd GeoSniffer`
+```
+cd GeoSniffer
+```
 
 3. Install the dependencies for both frontend and backend:
 
@@ -32,7 +36,9 @@ npm install
 
 1. Start the backend server by running the following command in the `backend` folder:
 
-`npm run dev`
+```
+npm run dev
+```
 
 Keep the backend server running in its terminal.
 
