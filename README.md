@@ -4,7 +4,7 @@ GeoSniffer is a web app that provides basic information about countries, such as
 
 ## Live Demo
 
-There is a live demo at the following url: `https://geosniffer.netlify.app/`
+There is a live demo at the following link: [Geo Sniffer](https://geosniffer.netlify.app/)
 
 ## Prerequisites
 
