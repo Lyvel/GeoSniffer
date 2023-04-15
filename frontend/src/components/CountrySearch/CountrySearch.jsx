@@ -22,7 +22,7 @@ const CountrySearch = () => {
     updateCountryData("");
     document.querySelector(".countrysearch").style.transform = "none";
     showLoading();
-    fetch(`/api/${country}`)
+    fetch(`https://country-info-7dq7.onrender.com/api/${country}`)
       .then((res) => {
         if (res.ok) {
           return res.json();

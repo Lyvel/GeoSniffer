@@ -2,6 +2,14 @@ const axios = require("axios");
 const express = require("express");
 const app = express();
 
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 app.get("/api/:id", (req, res) => {
   fetchCountryData(req.params.id).then((data) => {
     res.send(data);
