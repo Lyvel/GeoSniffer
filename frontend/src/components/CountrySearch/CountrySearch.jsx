@@ -26,7 +26,7 @@ const CountrySearch = () => {
     updateCountryData("");
     document.querySelector(".countrysearch").style.transform = "none";
     showLoading();
-    fetch(`https://country-info-7dq7.onrender.com/api/${country}`)
+    fetch(`/api/${country}`)
       .then((res) => {
         if (res.ok) {
           return res.json();
