@@ -19,7 +19,6 @@
 
 .countryView__full {
   width: 90vw;
-  justify-content: flex-end;
 }
 
 @media screen and (max-width: 1000px) {
