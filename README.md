@@ -49,7 +49,6 @@ Keep the backend server running in its terminal.
 2. Open a new terminal and navigate to the `frontend` folder, then start the frontend development server:
 
 ```
-cd path/to/GeoSniffer/frontend
 npm start
 ```
 
